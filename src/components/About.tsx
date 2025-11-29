@@ -1,6 +1,7 @@
 import { ABOUT_TEXT, PROFILE_IMAGE } from "../constants";
 import { motion } from "framer-motion";
 import React from "react";
+import { TypingText } from "./TypingText";
 
 const About: React.FC = () => {
   return (
@@ -40,7 +41,7 @@ const About: React.FC = () => {
           className="w-full lg:w-1/2 flex justify-center lg:justify-start px-4 sm:px-8"
         >
           <p className="my-4 max-w-xl py-4 text-base sm:text-lg text-gray-300 font-light tracking-wide leading-relaxed bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 bg-clip-text text-transparent">
-            {ABOUT_TEXT}
+            <TypingText text={ABOUT_TEXT} speed={50} />
           </p>
         </motion.div>
       </div>

@@ -61,12 +61,12 @@ export const NAME = "Abhishek Gupta";
 export const ROLE = "Full Stack Developer";
 export const RESUME_FILENAME = "resume.pdf"; // 
 
-export const HERO_CONTENT: string = `I love building full-stack products with AI integration — building intelligent agents and automation tools that make real workflows faster and smarter.`;
+export const HERO_CONTENT: string = `I  love building full-stack products with AI integration — building intelligent agents and automation tools that make real workflows faster and smarter.`;
 
 // Path to profile image used in About section
 export const PROFILE_IMAGE = profileImg;
 
-export const ABOUT_TEXT: string = `I'm a Full Stack Developer focused on building reliable web products with AI-powered experiences — from production-ready APIs to client apps and lightweight automation agents. I enjoy turning ideas into robust end-to-end systems and iterating fast.`;
+export const ABOUT_TEXT: string = `I' m a Full Stack Developer focused on building reliable web products with AI-powered experiences — from production-ready APIs to client apps and lightweight automation agents. I enjoy turning ideas into robust end-to-end systems and iterating fast.`;
 
 export const EXPERIENCES: Experience[] = [
   {
