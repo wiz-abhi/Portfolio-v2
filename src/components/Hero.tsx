@@ -4,6 +4,7 @@ import { FileText } from "lucide-react";
 import resume from "../assets/projects/resume.pdf";
 import { useState } from "react";
 import { IconCloud } from "@/components/ui/icon-cloud";
+import { TypingText } from "./TypingText";
 
 // Build rotating icon list from centralized TECHNOLOGIES (only showInHero entries)
 const techSlugs = TECHNOLOGIES.filter((t) => t.showInHero).map((t) => t.slug);
@@ -23,7 +24,7 @@ const Hero: React.FC = () => {
   const togglePreview = () => setShowPreview((prev) => !prev);
 
   return (
-    <div className="border-b border-neutral-900 pb-6 mt-20">  
+    <div className="border-b border-neutral-900 pb-6 mt-20">
       <div className="flex flex-wrap items-start justify-center lg:justify-between pt-10">
 
         {/* LEFT SECTION */}
@@ -55,7 +56,7 @@ const Hero: React.FC = () => {
             className="my-4 max-w-xl py-4 text-base sm:text-lg font-light tracking-wide leading-relaxed 
               bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 bg-clip-text text-transparent"
           >
-            {HERO_CONTENT}
+            <TypingText text={HERO_CONTENT} speed={50} />
           </motion.p>
 
           {/* Resume Button */}
@@ -75,18 +76,18 @@ const Hero: React.FC = () => {
           </motion.button>
         </div>
 
-       {/* RIGHT SECTION */}
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end 
+        {/* RIGHT SECTION */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end 
                 p-4 sm:p-8
                 mt-0 lg:-mt-16   /* shift UP */
                 lg:-translate-x-16  /* shift LEFT on large screens */
             ">
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
-                className="
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="
                   relative 
                   w-[280px] h-[280px]
                   sm:w-[350px] sm:h-[350px]
@@ -95,21 +96,21 @@ const Hero: React.FC = () => {
                   xl:w-[580px] xl:h-[580px]
                   flex items-center justify-center
                 "
-              >
-                {/* Background Glow */}
-                <div
-                  className="absolute inset-0 -z-10 
+          >
+            {/* Background Glow */}
+            <div
+              className="absolute inset-0 -z-10 
                   bg-gradient-to-br from-pink-300/20 via-slate-500/20 to-purple-500/20 
                   blur-3xl rounded-full opacity-60"
-                ></div>
+            ></div>
 
-                <IconCloud
-                  images={techSlugs.map((slug) => `https://cdn.simpleicons.org/${slug}`)}
-                  radius={window.innerWidth < 480 ? 80 : window.innerWidth < 768 ? 100 : 120}
-                  rotationSpeed={window.innerWidth < 480 ? 1.3 : 1.9}
-                />
-              </motion.div>
-            </div>
+            <IconCloud
+              images={techSlugs.map((slug) => `https://cdn.simpleicons.org/${slug}`)}
+              radius={window.innerWidth < 480 ? 80 : window.innerWidth < 768 ? 100 : 120}
+              rotationSpeed={window.innerWidth < 480 ? 1.3 : 1.9}
+            />
+          </motion.div>
+        </div>
       </div>
 
       {/* Resume Preview Modal */}
@@ -130,7 +131,7 @@ const Hero: React.FC = () => {
             <h2 className="mb-4 text-xl font-medium">Resume Preview</h2>
 
             <div className="aspect-[8.5/11] w-full bg-white">
-              <embed src={resume} type="application/pdf" className="h-full w-full"/>
+              <embed src={resume} type="application/pdf" className="h-full w-full" />
             </div>
 
             <div className="mt-4 flex justify-between">
